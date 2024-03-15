@@ -1,0 +1,52 @@
+Develop a C# program to demonstrate Division by Zero and Index Out of Range exceptions.
+
+
+Code:
+
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Division by Zero Exception
+        try
+        {
+            int numerator = 10;
+            int denominator = 0;
+            int result = numerator / denominator; // This line will throw DivideByZeroException
+            Console.WriteLine("Result of division: " + result);
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine("Error: Division by zero is not allowed.");
+            Console.WriteLine("Exception Details: " + ex.Message);
+        }
+
+        // Index Out of Range Exception
+        try
+        {
+            int[] numbers = { 1, 2, 3, 4, 5 };
+            int index = 10; // Trying to access an index that doesn't exist
+            int value = numbers[index]; // This line will throw IndexOutOfRangeException
+            Console.WriteLine("Value at index " + index + ": " + value);
+        }
+        catch (IndexOutOfRangeException ex)
+        {
+            Console.WriteLine("Error: Index is out of range.");
+            Console.WriteLine("Exception Details: " + ex.Message);
+        }
+
+        Console.ReadLine();
+    }
+}
+
+
+
+Output:
+Error: Division by zero is not allowed.
+Exception Details: Attempted to divide by zero.
+Error: Index is out of range.
+Exception Details: Index was outside the bounds of the array.
+
